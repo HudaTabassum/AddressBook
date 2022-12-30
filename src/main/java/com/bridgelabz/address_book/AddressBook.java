@@ -7,30 +7,31 @@ public class AddressBook {
 Scanner sc = new Scanner(System.in);
 
 	
-	public void createContact()
+	public Contact createContact()
 	{
-		Contact contact = new Contact();
+		Contact newContact = new Contact();
 		System.out.println("pls enter first name");
         String firstName = sc.nextLine();
-        contact.setFirstName(firstName);	
+        newContact.setFirstName(firstName);	
         System.out.println("pls enter last name");
         String lastName = sc.nextLine();
-        contact.setFirstName(lastName);
+        newContact.setFirstName(lastName);
         System.out.println("pls enter city");
         String city = sc.nextLine();
-        contact.setFirstName(city);
+        newContact.setFirstName(city);
         System.out.println("pls enter address");
         String address = sc.nextLine();
-        contact.setFirstName(address);
+        newContact.setFirstName(address);
         System.out.println("pls enter state");
         String state = sc.nextLine();
-        contact.setFirstName(state);
+        newContact.setFirstName(state);
         System.out.println("pls enter the zip");
         String zip = sc.nextLine();
-        contact.setFirstName(zip);
+        newContact.setFirstName(zip);
         System.out.println("pls enter phone number");
         String phone = sc.nextLine();
-        contact.setFirstName(phone);
-        System.out.println(contact);
+        newContact.setFirstName(phone);
+        System.out.println(newContact);
+        return newContact;
 	}
 }
