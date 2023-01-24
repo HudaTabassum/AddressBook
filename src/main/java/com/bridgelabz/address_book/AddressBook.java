@@ -1,11 +1,13 @@
 package com.bridgelabz.address_book;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
    
 Scanner sc = new Scanner(System.in);
 
+	ArrayList<Contact> al1 = new ArrayList();
 	
 	public Contact createContact()
 	{
@@ -32,6 +34,12 @@ Scanner sc = new Scanner(System.in);
         String phone = sc.nextLine();
         newContact.setFirstName(phone);
         System.out.println(newContact);
+        al1.add(newContact);
         return newContact;
+	}
+	
+	void print()
+	{
+		System.out.println(al1);
 	}
 }
