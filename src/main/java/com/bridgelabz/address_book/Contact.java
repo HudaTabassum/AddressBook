@@ -55,12 +55,9 @@ public class Contact {
 	@Override
 	public String toString() {
 		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", city=" + city + ", address=" + address
-				+ ", state=" + state + ", zip=" + zip + ", phone=" + phone + ", getFirstName()=" + getFirstName()
-				+ ", getLastName()=" + getLastName() + ", getCity()=" + getCity() + ", getAddress()=" + getAddress()
-				+ ", getState()=" + getState() + ", getZip()=" + getZip() + ", getPhone()=" + getPhone()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+				+ ", state=" + state + ", zip=" + zip + ", phone=" + phone + "]";
 	}
-	   
+	
+	
 	   
 }
