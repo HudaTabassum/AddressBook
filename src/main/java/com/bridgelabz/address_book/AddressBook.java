@@ -1,13 +1,16 @@
 package com.bridgelabz.address_book;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-public class AddressBook {
+public class AddressBook extends Contact{
    
 Scanner sc = new Scanner(System.in);
 
 	ArrayList<Contact> al1 = new ArrayList<Contact>();
+
+	
 	
 	public Contact createContact()
 	{
@@ -41,14 +44,95 @@ Scanner sc = new Scanner(System.in);
         long phone = sc.nextLong();
         newContact.setPhone(phone);
         
-        System.out.println(newContact);
+       // System.out.println(newContact);
        
+        al1.add(newContact);
+        Iterator<Contact> itr = al1.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
         return newContact;
 	}
 	
+	void editContact() {
+        Contact contact = null;
+
+        System.out.println("Enter the Contact Name which you want to Edit ");
+        String name = sc.next();
+
+        Iterator<Contact> itr = al1.iterator();
+
+        while (itr.hasNext()) {
+            Contact tempContact = itr.next();
+            if (name.equals(tempContact.getFirstName())) {
+                contact = tempContact;
+            }
+        }
+        if (contact != null) {
+
+            System.out.println("Enter your choice what you want to edit in contact edit press" + " \n 1.PhoneNo \n 2.Firstname \n 3.Lastname \n 4.Address \n 5.City \n " + "6.State \n 7. Email \n 8.ZipCode ");
+
+            int ch = sc.nextInt();
+            long phone;
+			switch (ch) {
+
+                case 1:
+                    System.out.print("Please Enter The New Phone Number :: ");
+                    phone = sc.nextLong();
+                    contact.setPhone(phone);
+                    break;
+                case 2:
+                    System.out.print("Enter first name :: ");
+                    firstName = sc.next();
+                    contact.setFirstName(firstName);
+                    break;
+                case 3:
+                    System.out.print("Please Enter The Last Name :: ");
+                    lastName = sc.next();
+                    contact.setFirstName(lastName);
+                    break;
+                case 4:
+                    System.out.print("Please Enter The Address :: ");
+                    address = sc.next();
+                    contact.setAddress(address);
+                    break;
+                case 5:
+                    System.out.print("Please Enter The City :: ");
+                    city = sc.next();
+                    contact.setCity(city);
+                    break;
+                case 6:
+                    System.out.print("Please Enter The State :: ");
+                    state = sc.next();
+                    contact.setState(state);
+                    break;
+                
+                case 7:
+                    System.out.print("Please Enter The Zip Code :: ");
+                    zip = sc.nextInt();
+                    contact.setZip(zip);
+                    break;
+                default:
+                    System.out.println("Invalid input ");
+            }
+
+            System.out.println("Addressbook after editing contact ");
+            al1.forEach(person -> System.out.println(person));
+
+        } else {
+            System.out.println("Name not found ");
+
+        }
+
+    }
+
+	
 	void print()
 	{
-		 al1.add(createContact());
-		System.out.println(al1);
+		 
+		 Iterator itr1 = al1.iterator();
+	        while (itr1.hasNext()) {
+	            System.out.println(itr1.next());
+	        }
 	}
 }
